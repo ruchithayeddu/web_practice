@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Examination Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #06545a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background: #208593;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        button {
+            padding: 8px 15px;
+            background: #27ae60;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2ecc71;
+        }
+        input, select {
+            padding: 8px;
+            margin: 5px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px;
+        }
+        table, th, td {
+            border: 1px solid #999;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        .section {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        
+    </style>
+    <script>
+        function showSection(id) {
+            let sections = document.querySelectorAll(".section");
+            sections.forEach(sec => sec.classList.remove("active"));
+            document.getElementById(id).classList.add("active");
+            window.scrollTo(0,0);
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>Online Examination Portal</h1>
+</header>
+
+<nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('login')">Login</a>
+    <a href="#" onclick="showSection('register')">Registration</a>
+    <a href="#" onclick="showSection('test')">Test</a>
+    <a href="#" onclick="showSection('results')">Results</a>
+</nav>
+
+<!-- Home Page -->
+<div id="home" class="section active container">
+    <h2>Welcome to Online Examination Portal</h2>
+    <p>This website helps students register, log in, take tests, and view their results easily from anywhere. It is designed to make exams simple, secure, and fast for both students and administrators.</p>
+    <p>Use the navigation menu to explore different sections.</p>
+</div>
+
+<!-- Login Page -->
+<div id="login" class="section container">
+    <h2>Login</h2>
+    <button onclick="showSection('studentLogin')">Student Login</button>
+    <button onclick="showSection('adminLogin')">Admin Login</button>
+</div>
+
+<!-- Student Login -->
+<div id="studentLogin" class="section container">
+    <h2>Student Login</h2>
+    <form>
+        <label>Email:</label>
+        <input type="email" required>
+        <label>Password:</label>
+        <input type="password" required>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<!-- Admin Login -->
+<div id="adminLogin" class="section container">
+    <h2>Admin Login</h2>
+    <form>
+        <label>Username:</label>
+        <input type="text" required>
+        <label>Password:</label>
+        <input type="password" required>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<!-- Registration Page -->
+<div id="register" class="section container">
+    <h2>Register</h2>
+    <form>
+        <label>Full Name:</label>
+        <input type="text" required>
+        <label>Roll Number:</label>
+        <input type="text" required>
+        <label>Password:</label>
+        <input type="password" required>
+        <label>Role:</label>
+        <select>
+            <option>Student</option>
+            <option>Admin</option>
+        </select>
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+<!-- Test Page -->
+<div id="test" class="section container">
+    <h2>Online Test</h2>
+    <form>
+        <label>Course Code:</label>
+        <input type="text">
+        <label>Course Name:</label>
+        <input type="text">
+        <label>Roll Number:</label>
+        <input type="text">
+        <label>Sem:</label>
+        <input type="text">
+        <label>Regulation:</label>
+        <input type="text">
+
+        <h3>Answer the Questions</h3>
+        <table>
+            <tr>
+                <td>1</td>
+                <td>Which tag is used to create a hyperlink in HTML?</td>
+                <td><input type="radio" name="q1"> link tag</td>
+                <td><input type="radio" name="q1"> a tag</td>
+                <td><input type="radio" name="q1"> href tag</td>
+                <td><input type="radio" name="q1"> url tag</td>
+                
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>JS is which type of language?</td>
+                <td><input type="radio" name="q2"> programming</td>
+                <td><input type="radio" name="q2"> styling</td>
+                <td><input type="radio" name="q2"> database</td>
+                <td><input type="radio" name="q2"> markup</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Which is not a css unit?</td>
+                <td><input type="radio" name="q3"> px</td>
+                <td><input type="radio" name="q3"> %</td>
+                <td><input type="radio" name="q3"> em</td>
+                <td><input type="radio" name="q3"> cmx</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>which tag is used to insert image?</td>
+                <td><input type="radio" name="q4"> image</td>
+                <td><input type="radio" name="q4"> pic</td>
+                <td><input type="radio" name="q4"> img</td>
+                <td><input type="radio" name="q4"> src</td>
+            </tr>
+             
+        </table>
+        <br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</div>
+
+<!-- Results Page -->
+<div id="results" class="section container">
+    <h2>Results</h2>
+
+    <table>
+        <tr>
+            <th>S.No</th>
+            <th>Course Code</th>
+            <th>Course Name</th>
+            <th>Grade Points</th>
+            <th>Credits</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>WT10101</td>
+            <td>WT</td>
+            <td>9</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>SR10202</td>
+            <td>STAT with R</td>
+            <td>8</td>
+            <td>3</td>
+        </tr>
+         <tr>
+            <td>3</td>
+            <td>MPSE10202</td>
+            <td>MPSE</td>
+            <td>8</td>
+            <td>3</td>
+        </tr>
+         <tr>
+            <td>4</td>
+            <td>DAA10303</td>
+            <td>DAA</td>
+            <td>9</td>
+            <td>3</td>
+        </tr>
+         <tr>
+            <td>5</td>
+            <td>NOSQL10202</td>
+            <td>NO SQL</td>
+            <td>8</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <p><strong>SGPA:</strong> 8.5</p>
+    <p><strong>CGPA:</strong> 8.8</p>
+</div>
+
+</body>
+</html>
